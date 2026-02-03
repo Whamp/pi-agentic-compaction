@@ -1,0 +1,13 @@
+{
+  "compactionModels": [
+    { "provider": "cerebras", "id": "qwen-3-32b" },
+    { "provider": "anthropic", "id": "claude-haiku-4-5" }
+  ],
+  "thinkingLevel": "off",
+
+  "debugCompactions": false,
+  "toolResultMaxChars": 50000,
+  "toolCallPreviewChars": 60,
+  "toolCallConcurrency": 6,
+  "minSummaryChars": 100
+}

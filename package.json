@@ -1,0 +1,47 @@
+{
+  "name": "pi-agentic-compaction",
+  "version": "0.3.0",
+  "description": "Pi extension for intelligent conversation compaction using a virtual filesystem and LLM exploration",
+  "keywords": [
+    "pi-package"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willwill/pi-agentic-compaction"
+  },
+  "files": [
+    "index.ts",
+    "config.json",
+    "README.md"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint -c .oxlintrc.json",
+    "lint:fix": "oxlint -c .oxlintrc.json --fix",
+    "format": "oxfmt --config .oxfmtrc.jsonc",
+    "format:check": "oxfmt --config .oxfmtrc.jsonc --check",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
+  "dependencies": {
+    "just-bash": "^1.5.4"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.28.0",
+    "ultracite": "^7.1.3",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-coding-agent": "*",
+    "@sinclair/typebox": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
