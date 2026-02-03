@@ -30,25 +30,6 @@ pi install git:github.com/Whamp/pi-agentic-compaction
 pi install npm:pi-agentic-compaction
 ```
 
-**Local development (symlink):**
-
-```bash
-# Add to settings.json manually since pi install doesn't support local paths
-# In ~/.pi/agent/settings.json:
-{
-  "packages": [
-    "/home/will/projects/pi-agentic-compaction"
-  ]
-}
-```
-
-Or symlink into the extensions directory:
-
-```bash
-ln -s ~/projects/pi-agentic-compaction ~/.pi/agent/extensions/agentic-compaction
-cd ~/.pi/agent/extensions/agentic-compaction && npm install
-```
-
 The extension is auto-discovered on next pi start. Use `/reload` to hot-reload after changes.
 
 ## How it works
