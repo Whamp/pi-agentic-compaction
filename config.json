@@ -1,7 +1,8 @@
 {
   "compactionModels": [
-    { "provider": "cerebras", "id": "qwen-3-32b" },
-    { "provider": "anthropic", "id": "claude-haiku-4-5" }
+    { "provider": "zai", "id": "glm-4.7" },
+    { "provider": "google-antigravity", "id": "gemini-3-flash" },
+    { "provider": "zai", "id": "glm-4.6" }
   ],
   "thinkingLevel": "off",
 
