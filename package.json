@@ -27,11 +27,11 @@
     "fix": "ultracite fix"
   },
   "dependencies": {
-    "just-bash": "^1.5.4"
+    "just-bash": "^2.7.1"
   },
   "devDependencies": {
     "oxfmt": "^0.28.0",
-    "ultracite": "^7.1.3",
+    "ultracite": "^7.1.4",
     "vitest": "^4.0.18"
   },
   "peerDependencies": {

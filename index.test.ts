@@ -1024,7 +1024,7 @@ describe("selectCompactionModel", () => {
   });
 
   it("returns first available model with API key", async () => {
-    const model1 = { provider: "cerebras", id: "qwen-3-32b" };
+    const model1 = { provider: "google-antigravity", id: "gemini-3-flash" };
     const mockRegistry = {
       getAll: () => [model1],
       getApiKey: async () => "test-key",
@@ -1037,22 +1037,23 @@ describe("selectCompactionModel", () => {
   });
 
   it("skips models without API keys", async () => {
-    const model1 = { provider: "cerebras", id: "qwen-3-32b" };
-    const model2 = { provider: "anthropic", id: "claude-haiku-4-5" };
+    // First model in config is google-antigravity/gemini-3-flash, second is zai/glm-4.7
+    const model1 = { provider: "google-antigravity", id: "gemini-3-flash" };
+    const model2 = { provider: "zai", id: "glm-4.7" };
     const mockRegistry = {
       getAll: () => [model1, model2],
       getApiKey: async (m: { provider: string }) =>
-        m.provider === "anthropic" ? "anthropic-key" : undefined,
+        m.provider === "zai" ? "zai-key" : undefined,
     } as unknown as ModelRegistry;
 
     const result = await selectCompactionModel(mockRegistry, undefined);
     expect(result).not.toBeNull();
     expect(result?.model).toBe(model2);
-    expect(result?.apiKey).toBe("anthropic-key");
+    expect(result?.apiKey).toBe("zai-key");
   });
 
   it("includes default thinking level", async () => {
-    const model = { provider: "cerebras", id: "qwen-3-32b" };
+    const model = { provider: "google-antigravity", id: "gemini-3-flash" };
     const mockRegistry = {
       getAll: () => [model],
       getApiKey: async () => "key",
